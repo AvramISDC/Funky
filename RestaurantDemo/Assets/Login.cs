@@ -26,8 +26,6 @@ public class Login : MonoBehaviour {
         if (fadeDir == 1 && alpha == 1)
         {
             Application.LoadLevel(1);
-
-    
         }
 
     }
