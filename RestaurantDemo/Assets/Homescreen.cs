@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using LitJson;
 
 public class Homescreen : MonoBehaviour
 {
@@ -39,5 +40,21 @@ public class Homescreen : MonoBehaviour
     {
         fadestarted = true;
     }
+    IEnumerator Start ()
+    {
+        string url = "http://localhost:53313/Api/Restaurants";
+        WWW fa = new WWW(url);
+        yield return fa;
+        if(fa.error == null)
+        {
+            Debug.Log("Loaded balb bals" + fa.text);
+            
+     
+        }
+
+
+    }
+       
+
 
 }
