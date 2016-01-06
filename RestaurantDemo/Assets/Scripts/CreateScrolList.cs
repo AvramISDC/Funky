@@ -19,7 +19,7 @@ public class CreateScrolList : MonoBehaviour
     public GameObject sampleButton;
     public List<Iitem> itemList;
 
-    public Transform contentPanel;
+    public GameObject contentPanel;
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class CreateScrolList : MonoBehaviour
             button.nameoftherestaurant.text = item.name;
             button.averagestars.text = item.averagestars;
             button.button.onClick = item.thingToDo;
-            newButton.transform.SetParent(contentPanel);
+            newButton.transform.SetParent(contentPanel.transform);
         }
     }
 }
