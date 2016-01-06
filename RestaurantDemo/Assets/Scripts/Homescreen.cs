@@ -8,12 +8,10 @@ public class Homescreen : MonoBehaviour
 
     public Texture2D fadeoutTexture;
     public float fadeSpeed = 0.8f;
-
     private int drawDepth = -1000;
     private float alpha = 0f;
     private int fadeDir = 1;
     private bool fadestarted = false;
-
 
     public void OnGUI()
     {
@@ -30,17 +28,19 @@ public class Homescreen : MonoBehaviour
         {
             Application.LoadLevel(0);
         }
-
     }
+
     public float BeginFade(int direction)
     {
         fadeDir = direction;
         return fadeSpeed;
     }
+
     public void OnClick()
     {
         fadestarted = true;
     }
+
     IEnumerator Start ()
     {
         string url = "http://localhost:53313/Api/Restaurants";
@@ -50,9 +50,8 @@ public class Homescreen : MonoBehaviour
         {
             Debug.Log("Loaded balb bals" + fa.text);
         }
-        
-
     }
+
     private void ProcessRestaurants(string Json)
     {
         JsonData json = JsonMapper.ToObject(Json);
@@ -66,11 +65,6 @@ public class Homescreen : MonoBehaviour
             r.Adress = json[i]["Adress"].ToString();
             r.AverageStars = Convert.ToDouble(json[i]["AverageStars"].ToString());
         }
-            
-
     }
-    
-
-
 
 }

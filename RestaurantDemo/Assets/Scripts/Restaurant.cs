@@ -8,5 +8,4 @@ public class Restaurant
     public string Description;
     public string Adress;
     public double AverageStars;
-
 }
