@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\CriteriaButton.cs" />
     <Compile Include="Assets\Scripts\Homescreen.cs" />
     <Compile Include="Assets\Scripts\Login.cs" />
+    <Compile Include="Assets\Scripts\Register.cs" />
     <Compile Include="Assets\Scripts\Restaurant.cs" />
     <Compile Include="Assets\Scripts\SampleButton.cs" />
   </ItemGroup>
