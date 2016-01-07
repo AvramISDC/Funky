@@ -26,7 +26,7 @@ public class CreateScrolList : MonoBehaviour
         PopulateList();
     }
 
-    void PopulateList()
+    public void PopulateList()
     {
         foreach (var item in itemList)
         {

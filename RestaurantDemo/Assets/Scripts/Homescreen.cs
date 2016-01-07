@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using LitJson;
 using System;
@@ -48,23 +49,25 @@ public class Homescreen : MonoBehaviour
         yield return fa;
         if(fa.error == null)
         {
-            Debug.Log("Loaded balb bals" + fa.text);
+            ProcessRestaurants(fa.text);
         }
     }
 
     private void ProcessRestaurants(string Json)
     {
+        var Game = GameObject.Find("Game Controller").GetComponent<CreateScrolList>();
+        Game.itemList.Clear();
         JsonData json = JsonMapper.ToObject(Json);
-        Restaurant r;
+        Iitem r;
         for (int i = 0; i < json.Count; i++)
         {
-            r = new Restaurant();
-            r.ID = Convert.ToInt32(json[i]["ID"].ToString());
-            r.Name = json[i]["Name"].ToString();
-            r.Description = json[i]["Description"].ToString();
-            r.Adress = json[i]["Adress"].ToString();
-            r.AverageStars = Convert.ToDouble(json[i]["AverageStars"].ToString());
+            r = new Iitem();
+            r.name = json[i]["Name"].ToString();
+            r.averagestars = json[i]["AverageStars"].ToString();
+            r.thingToDo
+            Game.itemList.Add(r);
         }
+        Game.PopulateList();
     }
 
 }
