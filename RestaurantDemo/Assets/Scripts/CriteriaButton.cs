@@ -7,7 +7,7 @@ public class CriteriaButton : MonoBehaviour {
     public GameObject restaurantsPanel;
 
 	public void OnClick() {
-        criteriaPanel.active = !criteriaPanel.active;
-        restaurantsPanel.active = !restaurantsPanel.active;
+        criteriaPanel.SetActive(!criteriaPanel.activeSelf);
+        restaurantsPanel.SetActive(!criteriaPanel.activeSelf);
     }
 }

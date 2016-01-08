@@ -74,8 +74,7 @@ public class Homescreen : MonoBehaviour
     public void RestaurantClick(int ID)
     {
         Debug.Log("Click" + ID);
-
-
+        
     }
 
 }
