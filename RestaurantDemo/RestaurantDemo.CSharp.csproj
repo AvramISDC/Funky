@@ -61,7 +61,7 @@
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>Assets\Scripts\LitJson.dll</HintPath>
+      <HintPath>Assets\LitJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
