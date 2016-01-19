@@ -15,8 +15,9 @@ namespace funkyrestaurants.web
         {
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
-            config.Formatters.Clear();
-            config.Formatters.Add(new JsonMediaTypeFormatter());
+            //config.Formatters.Clear();
+            //config.Formatters.Add(new JsonMediaTypeFormatter());
+            //config.Formatters.Add(new FormUrlEncodedMediaTypeFormatter());
 
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));

@@ -10,7 +10,8 @@ namespace funkyrestaurants.web.Controllers
 {
     public class UsersController : ApiController
     {
-        public bool RegisterUser(RegisterData data)
+        [HttpPost]
+        public bool PostRegisterUser(RegisterData data)
         {
             var db = new FunkyDb();
             var user = new User();
