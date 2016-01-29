@@ -15,6 +15,7 @@ namespace funkyrestaurants.web.Controllers
         {
             var db = new FunkyDb();
             var user = new User();
+            user.Username = data.username;
             user.Name = data.username;
             user.Password = data.password;
             user.EmailAdress = data.emailadress;
@@ -28,9 +29,9 @@ namespace funkyrestaurants.web.Controllers
     }
     public class RegisterData
     {
-        public string username;
-        public string password;
-        public string emailadress;
+        public string username { get; set; }
+        public string password { get; set; }
+        public string emailadress { get; set; }
 
 
     }
