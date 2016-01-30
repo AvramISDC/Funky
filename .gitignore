@@ -210,7 +210,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 
-
 */[Ll]ibrary/
 */[Tt]emp/
 */[Oo]bj/
@@ -230,10 +229,6 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
-
-
-# Unity3D generated meta files
-*.pidb.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
