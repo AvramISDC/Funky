@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c865ebc4208fd724a804ad269ded6e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleButton: {fileID: 0}
+  sampleButton: {fileID: 105188, guid: 0a706fcfc629a8841a21c5568526fab8, type: 2}
   itemList:
   - name: x
     averagestars: 3
@@ -663,7 +663,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  contentPanel: {fileID: 0}
+  contentPanel: {fileID: 859298645}
 --- !u!1 &485179995
 GameObject:
   m_ObjectHideFlags: 0
