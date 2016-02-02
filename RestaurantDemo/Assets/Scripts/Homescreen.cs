@@ -44,7 +44,7 @@ public class Homescreen : MonoBehaviour
 
     IEnumerator Start ()
     {
-        string url = "http://localhost/funkyrestaurants.web/Api/Restaurants";
+        string url = "http://localhost:53313/Api/Restaurants";
         WWW fa = new WWW(url);
         yield return fa;
         if(fa.error == null)
@@ -55,7 +55,7 @@ public class Homescreen : MonoBehaviour
 
     private void ProcessRestaurants(string Json)
     {
-        var Game = GameObject.Find("Game Controller").GetComponent<CreateScrolList>();
+        var Game = GameObject.Find("GameController").GetComponent<CreateScrolList>();
         Game.itemList.Clear();
         JsonData json = JsonMapper.ToObject(Json);
         Iitem r;
@@ -65,7 +65,7 @@ public class Homescreen : MonoBehaviour
             r.name = json[i]["Name"].ToString();
             r.averagestars = json[i]["AverageStars"].ToString();
             r.thingToDo = new Button.ButtonClickedEvent();
-            var ID = Convert.ToInt32(json[i]["ID"].ToString());
+            var ID = Convert.ToInt32(json[i]["Id"].ToString());
             r.thingToDo.AddListener(() =>RestaurantClick(ID));
             Game.itemList.Add(r);
         }

@@ -595,7 +595,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 426134210}
   - 114: {fileID: 426134209}
-  - 114: {fileID: 426134211}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -611,12 +610,82 @@ MonoBehaviour:
   m_GameObject: {fileID: 426134208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3db83861ac7c3046b71e1adf14dd523, type: 3}
+  m_Script: {fileID: 11500000, guid: c865ebc4208fd724a804ad269ded6e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleButton: {fileID: 105188, guid: 44ecd8e7fb7747d40bb3d25b141e4634, type: 2}
-  itemList: []
-  contentPanel: {fileID: 22476200, guid: 43558a01ecf43624bbe72a8b2477e4d1, type: 2}
+  sampleButton: {fileID: 105188, guid: 0a706fcfc629a8841a21c5568526fab8, type: 2}
+  itemList:
+  - name: ab
+    averagestars: 3
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: ab
+    averagestars: 3
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: ab
+    averagestars: 3
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: ab
+    averagestars: 3
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: 56
+    averagestars: 123
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: 123
+    averagestars: 123
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: 123
+    averagestars: 1
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: 14244c
+    averagestars: 3
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: 123
+    averagestars: 4
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: 123
+    averagestars: 3
+    thingToDo:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  contentPanel: {fileID: 859298645}
 --- !u!4 &426134210
 Transform:
   m_ObjectHideFlags: 0
@@ -629,41 +698,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!114 &426134211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 426134208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c865ebc4208fd724a804ad269ded6e22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sampleButton: {fileID: 105188, guid: 0a706fcfc629a8841a21c5568526fab8, type: 2}
-  itemList:
-  - name: x
-    averagestars: 3
-    thingToDo:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  - name: s
-    averagestars: 3
-    thingToDo:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  - name: d
-    averagestars: 3
-    thingToDo:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  contentPanel: {fileID: 859298645}
 --- !u!1 &485179995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,11 +1259,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22476200, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476200, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 276
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476200, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.y
@@ -1237,15 +1271,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22476200, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476200, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22476200, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22476200, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMax.y
@@ -1261,7 +1295,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497066, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_ChildAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499884, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
+      propertyPath: m_VerticalFit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497066, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
+      propertyPath: m_ChildForceExpandWidth
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497066, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
+      propertyPath: m_ChildForceExpandHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499884, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
+      propertyPath: m_HorizontalFit
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
