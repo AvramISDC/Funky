@@ -67,12 +67,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CreateScrolList.cs" />
     <Compile Include="Assets\Scripts\CriteriaButton.cs" />
+    <Compile Include="Assets\Scripts\CriteriaPanel.cs" />
     <Compile Include="Assets\Scripts\Homescreen.cs" />
     <Compile Include="Assets\Scripts\Login.cs" />
     <Compile Include="Assets\Scripts\Register.cs" />
     <Compile Include="Assets\Scripts\RegisterUsers.cs" />
     <Compile Include="Assets\Scripts\Restaurant.cs" />
     <Compile Include="Assets\Scripts\SampleButton.cs" />
+    <Compile Include="Assets\Scripts\SearchButton.cs" />
     <Compile Include="Assets\Scripts\SubmitScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

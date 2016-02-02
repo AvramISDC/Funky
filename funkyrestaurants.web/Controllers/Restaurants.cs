@@ -12,7 +12,7 @@ namespace funkyrestaurants.web.Controllers
     public class RestaurantsController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<Funkyrestaurant> Get()
+        public IEnumerable<Funkyrestaurant> Get(string Adress, float Ratings)
         {
             var Db = new FunkyDb ();
             List<Funkyrestaurant> list = new List<Funkyrestaurant> () ;
