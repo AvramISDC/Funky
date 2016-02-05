@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour {
 
@@ -25,7 +25,7 @@ public class Login : MonoBehaviour {
         GUI.DrawTexture ( new Rect (0, 0, Screen.width, Screen.height), fadeoutTexture );
         if (fadeDir == 1 && alpha == 1)
         {
-            Application.LoadLevel(1);
+            SceneManager.LoadScene(1);
         }
 
     }

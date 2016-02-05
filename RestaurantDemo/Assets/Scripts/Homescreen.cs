@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using LitJson;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Homescreen : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Homescreen : MonoBehaviour
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), fadeoutTexture);
         if (fadeDir == 1 && alpha == 1)
         {
-            Application.LoadLevel(0);
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -44,12 +45,17 @@ public class Homescreen : MonoBehaviour
 
     IEnumerator Start ()
     {
-        string url = "http://localhost:53313/Api/Restaurants";
+        
+        string url = "http://localhost:53313/api/Restaurants?Adress=Centru&Ratings=3";
         WWW fa = new WWW(url);
         yield return fa;
         if(fa.error == null)
         {
             ProcessRestaurants(fa.text);
+        }
+        else
+        {
+            Debug.Log(fa.error);
         }
     }
 
