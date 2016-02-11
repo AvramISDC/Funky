@@ -46,7 +46,7 @@ public class Homescreen : MonoBehaviour
     IEnumerator Start ()
     {
         
-        string url = "http://localhost:53313/api/Restaurants?Adress=Centru&Ratings=3";
+        string url = "http://localhost:53313/Api/Restaurants";
         WWW fa = new WWW(url);
         yield return fa;
         if(fa.error == null)
@@ -77,10 +77,12 @@ public class Homescreen : MonoBehaviour
         }
         Game.PopulateList();
     }
+    public SampleButtonPageOpener _SampleButtonPageOpener;
     public void RestaurantClick(int ID)
     {
-        Debug.Log("Click" + ID);
+        SceneParameters.SelectedRestaurantId = ID;
+        _SampleButtonPageOpener.OnClick();
         
     }
 
-}
+}   

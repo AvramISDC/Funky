@@ -18,6 +18,7 @@
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.2f1</UnityVersion>
     <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -73,7 +74,9 @@
     <Compile Include="Assets\Scripts\Register.cs" />
     <Compile Include="Assets\Scripts\RegisterUsers.cs" />
     <Compile Include="Assets\Scripts\Restaurant.cs" />
+    <Compile Include="Assets\Scripts\RestaurantStart.cs" />
     <Compile Include="Assets\Scripts\SampleButton.cs" />
+    <Compile Include="Assets\Scripts\SampleButtonPageOpener.cs" />
     <Compile Include="Assets\Scripts\SearchButton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
