@@ -35,7 +35,6 @@ public class CreateScrolList : MonoBehaviour
             button.nameoftherestaurant.text = item.name;
             button.averagestars.text = item.averagestars;
             button.button.onClick = item.thingToDo;
-            Debug.Log(button.nameoftherestaurant.text);
             newButton.transform.SetParent(contentPanel);
         }
     }

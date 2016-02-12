@@ -45,7 +45,6 @@ public class Homescreen : MonoBehaviour
 
     IEnumerator Start ()
     {
-        
         string url = "http://localhost:53313/Api/Restaurants";
         WWW fa = new WWW(url);
         yield return fa;
@@ -82,7 +81,6 @@ public class Homescreen : MonoBehaviour
     {
         SceneParameters.SelectedRestaurantId = ID;
         _SampleButtonPageOpener.OnClick();
-        
     }
 
 }   
