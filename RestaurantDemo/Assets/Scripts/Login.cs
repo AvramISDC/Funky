@@ -1,7 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Login : MonoBehaviour {
+
+    public GameObject Invalid;
+    private string username;
+    private string password;
+
+    public void GetUsername(string usernameInput)
+    {
+        username = usernameInput;
+    }
+    public void GetPassword(string passwordInput)
+    {
+        password = passwordInput;
+    }
 
     public Texture2D fadeoutTexture;
     public float fadeSpeed = 0.8f;
@@ -36,9 +50,34 @@ public class Login : MonoBehaviour {
     }
     public void OnClick()
     {
-        fadestarted = true; 
+        StartCoroutine(LoginUser());
     }
 
+    public IEnumerator LoginUser()
+    {
+        WWWForm q = new WWWForm();
+        q.AddField("username", username);
+        q.AddField("password", password);
 
+        q.headers["Content-Type"] = "application/x-www-form-urlencoded"; ;
+
+        WWW www = new WWW("http://localhost:53313/api/Login", q);
+        yield return www;
+        if (!string.IsNullOrEmpty(www.error))
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            if(www.text == "true")
+            {
+                fadestarted = true;
+            }
+            else
+            {
+                Invalid.SetActive(true);
+            }
+        }
+    }
 
 }

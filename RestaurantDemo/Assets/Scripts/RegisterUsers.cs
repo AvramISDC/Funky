@@ -19,10 +19,6 @@ public class RegisterUsers : MonoBehaviour {
     {
         email = emailInput;
     }
-    public void Check()
-    {
-        Debug.Log(username + "," + password + "," + email);
-    }
 
 
     public IEnumerator RegisterUser ()
