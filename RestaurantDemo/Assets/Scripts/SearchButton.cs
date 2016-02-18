@@ -1,12 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CriteriaPanel : MonoBehaviour {
+public class SearchButton : MonoBehaviour {
 
-	public void OnClick()
+    private string Adress = "";
+    private int Rating = -1;
+
+    public void RatingsChanged(int newrating)
     {
-        Debug.Log("Here need to send adress and a server to repopulate the list...json");
+        this.Rating = newrating;
+    }
 
+    public void AdressChanged (string newadress)
+    {
+        this.Adress = newadress;
+    }
+
+    public void OnClick()
+    {
+        var h = GameObject.Find("BackButton").GetComponent<Homescreen>();
+        h.StartCoroutine(h.GetRestaurants(this.Rating, this.Adress));
 
 
     }

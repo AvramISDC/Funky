@@ -9,11 +9,12 @@ public class Homescreen : MonoBehaviour
 {
 
     public Texture2D fadeoutTexture;
-    public float fadeSpeed = 0.8f;
+    public float fadeSpeed = 1.4f;
     private int drawDepth = -1000;
     private float alpha = 0f;
     private int fadeDir = 1;
     private bool fadestarted = false;
+    
 
     public void OnGUI()
     {
@@ -45,10 +46,31 @@ public class Homescreen : MonoBehaviour
 
     IEnumerator Start ()
     {
+        return GetRestaurants();
+    }
+
+    public IEnumerator GetRestaurants(int Rating = -1, string Adress = "")
+    {
         string url = "http://localhost:53313/Api/Restaurants";
+        string Querry = "";
+        if(Rating != -1)
+        {
+            Querry = Querry + "Ratings=" + Rating;
+        }
+        if(Adress != "")
+        {
+            if(Querry != "")
+            {
+                Querry = Querry + "&";
+            }
+            Querry = Querry + "Adress=" + Adress;
+        }
+        if (Querry != "")
+            url = url + "?" + Querry;
+
         WWW fa = new WWW(url);
         yield return fa;
-        if(fa.error == null)
+        if (fa.error == null)
         {
             ProcessRestaurants(fa.text);
         }
@@ -82,5 +104,4 @@ public class Homescreen : MonoBehaviour
         SceneParameters.SelectedRestaurantId = ID;
         _SampleButtonPageOpener.OnClick();
     }
-
 }   

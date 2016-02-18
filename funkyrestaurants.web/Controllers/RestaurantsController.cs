@@ -20,7 +20,7 @@ namespace funkyrestaurants.web.Controllers
 
             foreach( var restaurant in Db.Funkyrestaurants )
             {
-                if ((Adress == "" || restaurant.Adress == Adress) && (Ratings == -1 || restaurant.AverageStars == Ratings) && (ID == -1 || restaurant.Id == ID))
+                if ((Adress == "" || restaurant.Adress.ToLower().Contains(Adress.ToLower())) && (Ratings == -1 || restaurant.AverageStars >= Ratings) && (ID == -1 || restaurant.Id == ID))
                 {
                     list.Add(restaurant);
                 }             

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Register : MonoBehaviour {
 
     public Texture2D fadeoutTexture;
-    public float fadeSpeed = 0.8f;
+    public float fadeSpeed = 1.4f;
 
     private int drawDepth = -1000;
     private float alpha = 0f;

@@ -18,7 +18,7 @@ public class Login : MonoBehaviour {
     }
 
     public Texture2D fadeoutTexture;
-    public float fadeSpeed = 0.8f;
+    public float fadeSpeed = 1.4f;
 
     private int drawDepth = -1000;
     private float alpha = 0f;
@@ -43,6 +43,7 @@ public class Login : MonoBehaviour {
         }
 
     }
+
     public float BeginFade(int direction)
     {
         fadeDir = direction;
@@ -50,7 +51,7 @@ public class Login : MonoBehaviour {
     }
     public void OnClick()
     {
-        StartCoroutine(LoginUser());
+        fadestarted = true;
     }
 
     public IEnumerator LoginUser()
@@ -79,5 +80,4 @@ public class Login : MonoBehaviour {
             }
         }
     }
-
 }
