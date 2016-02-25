@@ -20,6 +20,7 @@ public class CreateScrolList : MonoBehaviour
     public List<Iitem> itemList;
 
     public Transform contentPanel;
+    private List<GameObject> buttons = new List<GameObject>();
 
     void Start()
     {
@@ -28,7 +29,11 @@ public class CreateScrolList : MonoBehaviour
 
     public void PopulateList()
     {
-        contentPanel.DetachChildren();
+        foreach (var button in buttons)
+        {
+            Destroy(button);
+        }
+        buttons.Clear();
 
         foreach (var item in itemList)
         {
@@ -38,11 +43,16 @@ public class CreateScrolList : MonoBehaviour
             button.averagestars.text = item.averagestars;
             button.button.onClick = item.thingToDo;
             newButton.transform.SetParent(contentPanel);
+            buttons.Add(newButton);
         }
     }
     public void FilterRestaurants(string a)
     {
-        contentPanel.DetachChildren();
+        foreach (var button in buttons)
+        {
+            Destroy(button);
+        }
+        buttons.Clear();
 
         foreach (var item in itemList)
         {
@@ -54,6 +64,7 @@ public class CreateScrolList : MonoBehaviour
             button.averagestars.text = item.averagestars;
             button.button.onClick = item.thingToDo;
             newButton.transform.SetParent(contentPanel);
+            buttons.Add(newButton);
         }
 
     }

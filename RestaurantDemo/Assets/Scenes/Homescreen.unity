@@ -211,7 +211,6 @@ GameObject:
   - 222: {fileID: 43404335}
   - 114: {fileID: 43404334}
   - 114: {fileID: 43404333}
-  - 114: {fileID: 43404336}
   m_Layer: 5
   m_Name: SearchBox
   m_TagString: Untagged
@@ -233,10 +232,10 @@ RectTransform:
   - {fileID: 2041840277}
   m_Father: {fileID: 962207032}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31, y: 125}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -23.500004, y: -47.986023}
+  m_SizeDelta: {x: -187, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &43404333
 MonoBehaviour:
@@ -345,20 +344,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 43404331}
---- !u!114 &43404336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 43404331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f70a8101f68f1b4a80e6f6e47a8a66e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeoutTexture: {fileID: 0}
-  fadeSpeed: 0.8
-  _SampleButtonPageOpener: {fileID: 0}
 --- !u!1 &88529889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,9 +1951,9 @@ RectTransform:
   - {fileID: 320522886}
   m_Father: {fileID: 962207032}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 126, y: 140}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 141, y: -33.000015}
   m_SizeDelta: {x: 44, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1019183605
@@ -2690,7 +2675,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.y
-      value: -216
+      value: -212
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.x
