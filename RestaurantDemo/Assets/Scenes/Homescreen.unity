@@ -1951,9 +1951,9 @@ RectTransform:
   - {fileID: 320522886}
   m_Father: {fileID: 962207032}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 141, y: -33.000015}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -65.5, y: -33}
   m_SizeDelta: {x: 44, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1019183605
@@ -2675,7 +2675,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.y
-      value: -212
+      value: -645
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.x
