@@ -16,22 +16,22 @@ public class Homescreen : MonoBehaviour
     private bool fadestarted = false;
     
 
-    public void OnGUI()
-    {
-        if (fadestarted == false)
-        {
-            return;
-        }
-        alpha += fadeDir * fadeSpeed * Time.deltaTime;
-        alpha = Mathf.Clamp01(alpha);
-        GUI.color = new Color(GUI.color.r, GUI.color.g, GUI.color.b, alpha);
-        GUI.depth = drawDepth;
-        GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), fadeoutTexture);
-        if (fadeDir == 1 && alpha == 1)
-        {
-            SceneManager.LoadScene(0);
-        }
-    }
+    //public void OnGUI()
+    //{
+    //    if (fadestarted == false)
+    //    {
+    //        return;
+    //    }
+    //    alpha += fadeDir * fadeSpeed * Time.deltaTime;
+    //    alpha = Mathf.Clamp01(alpha);
+    //    GUI.color = new Color(GUI.color.r, GUI.color.g, GUI.color.b, alpha);
+    //    GUI.depth = drawDepth;
+    //    GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), fadeoutTexture);
+    //    if (fadeDir == 1 && alpha == 1)
+    //    {
+    //        SceneManager.LoadScene(0);
+    //    }
+    //}
 
     public float BeginFade(int direction)
     {
@@ -41,7 +41,8 @@ public class Homescreen : MonoBehaviour
 
     public void OnClick()
     {
-        fadestarted = true;
+        //fadestarted = true;
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator Start ()
@@ -49,7 +50,12 @@ public class Homescreen : MonoBehaviour
         return GetRestaurants();
     }
 
-    public IEnumerator GetRestaurants(int Rating = -1, string Adress = "")
+    public void GetRestaurantsWithFilter(int Rating = -1, string Adress = "")
+    {
+        StartCoroutine(GetRestaurants(Rating, Adress));
+    }
+
+    private IEnumerator GetRestaurants(int Rating = -1, string Adress = "")
     {
         string url = "http://localhost:53313/Api/Restaurants";
         string Querry = "";

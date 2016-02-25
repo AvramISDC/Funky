@@ -19,8 +19,6 @@ public class SearchButton : MonoBehaviour {
     public void OnClick()
     {
         var h = GameObject.Find("BackButton").GetComponent<Homescreen>();
-        h.StartCoroutine(h.GetRestaurants(this.Rating, this.Adress));
-
-
+        h.GetRestaurantsWithFilter(this.Rating, this.Adress);
     }
 }

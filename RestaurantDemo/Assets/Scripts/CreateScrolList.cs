@@ -28,6 +28,8 @@ public class CreateScrolList : MonoBehaviour
 
     public void PopulateList()
     {
+        contentPanel.DetachChildren();
+
         foreach (var item in itemList)
         {
             GameObject newButton = Instantiate(sampleButton) as GameObject;

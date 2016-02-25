@@ -39,13 +39,9 @@ public class SampleButtonPageOpener : MonoBehaviour {
     {
         fadestarted = true;
     }
-
- 
 }
 
 public static class SceneParameters {
 
     public static int SelectedRestaurantId = 0;
-
-
 }
