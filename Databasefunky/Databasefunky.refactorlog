@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b72f6444-d490-425e-a6b8-06683e217aa5" ChangeDateTime="02/29/2016 20:04:54">
+    <Property Name="ElementName" Value="[dbo].[Comments].[User ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Comments]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="df3e13a9-e3ee-4bae-838b-9b011e21fb79" ChangeDateTime="02/29/2016 20:40:39">
+    <Property Name="ElementName" Value="[dbo].[Comments].[UserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Comments]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="User ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="adb0b175-c06f-421f-a89a-25e0a59e3b38" ChangeDateTime="02/29/2016 20:42:53">
+    <Property Name="ElementName" Value="[dbo].[Comments].[User ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Comments]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d998a18c-9b85-4a0c-b421-b6f9e01456d2" ChangeDateTime="02/29/2016 20:44:01">
+    <Property Name="ElementName" Value="[dbo].[Comments].[UserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Comments]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="User ID" />
+  </Operation>
+</Operations>

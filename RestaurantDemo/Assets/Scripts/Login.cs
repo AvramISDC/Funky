@@ -56,6 +56,9 @@ public class Login : MonoBehaviour {
 
     public IEnumerator LoginUser()
     {
+        username = !string.IsNullOrEmpty(username) ? username : "";
+        password = !string.IsNullOrEmpty(password) ? password : "";
+        Debug.Log(username + " " + password);
         WWWForm q = new WWWForm();
         q.AddField("username", username);
         q.AddField("password", password);
@@ -70,7 +73,7 @@ public class Login : MonoBehaviour {
         }
         else
         {
-            if(www.text == "true")
+            if (www.text == "true")
             {
                 fadestarted = true;
             }
