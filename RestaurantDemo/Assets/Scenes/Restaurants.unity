@@ -314,6 +314,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 775206013}
   - 114: {fileID: 775206012}
+  - 114: {fileID: 775206014}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -337,6 +338,7 @@ MonoBehaviour:
   RestaurantDescription: {fileID: 950141512}
   RestaurantRating: {fileID: 1569917891}
   RestaurantID: 0
+  commentList: []
 --- !u!4 &775206013
 Transform:
   m_ObjectHideFlags: 0
@@ -349,6 +351,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &775206014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775206011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a951461d780bd40a02983a106b463c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &950141510
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9c46cf610023846aec12185ed0c86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Invalid: {fileID: 0}
   fadeoutTexture: {fileID: 2800000, guid: 1fd1de48bbbed3c47a34d913b3733db9, type: 3}
   fadeSpeed: 1.4
 --- !u!114 &1775227194

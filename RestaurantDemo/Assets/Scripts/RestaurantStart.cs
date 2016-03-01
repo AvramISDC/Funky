@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 using LitJson;
+using System.Collections.Generic;
+
+[System.Serializable]
 
 public class RestaurantStart : MonoBehaviour {
     
@@ -10,9 +13,10 @@ public class RestaurantStart : MonoBehaviour {
     public Text RestaurantDescription;
     public Text RestaurantRating;
     public int RestaurantID;
+
     public IEnumerator Start ()
     {
-        string url = "http://localhost:53313/api/Restaurants?ID="+SceneParameters.SelectedRestaurantId;
+        string url = "http://localhost:53313/api/Restaurants?ID=" + SceneParameters.SelectedRestaurantId;
         WWW request = new WWW(url);
         yield return request;
         if (request.error == null)
@@ -28,9 +32,5 @@ public class RestaurantStart : MonoBehaviour {
             Debug.Log(request.error);
         }
         RestaurantID = SceneParameters.SelectedRestaurantId;
-        //RestaurantName.text = "restraurant1";
-        //RestaurantAdress.text = "centru";
-        //RestaurantDescription.text = "ii fain";
-        //RestaurantRating.text = "1/10";
     }
 }
