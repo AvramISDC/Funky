@@ -19,31 +19,60 @@ public class Comments : MonoBehaviour {
 
     public List<CommentItem> commentList;
 
+    public GameObject CommentTemplate;
+
+    public Transform contentPanel;
+    private List<GameObject> commentsSpace = new List<GameObject>();
+
     public IEnumerator Start()
     {
         RestaurantID = SceneParameters.SelectedRestaurantId;
-        string url = "http://localhost:53313/api/Comments?RestaurantID=" + SceneParameters.SelectedRestaurantId;
-        WWW request = new WWW(url);
-        yield return request;
-        if (request.error == null)
+        if (RestaurantID != 0)
         {
-            JsonData resultJson = JsonMapper.ToObject(request.text);
-            for (int i = 0; i < resultJson.Count; i++)
+            string url = "http://localhost:53313/api/Comments?RestaurantID=" + SceneParameters.SelectedRestaurantId;
+            WWW request = new WWW(url);
+            yield return request;
+            if (request.error == null)
             {
-                CommentItem comment = new CommentItem();
-                comment.Comment = resultJson[i]["Text"].ToString();
-                comment.Ratings = resultJson[i]["Ratings"].ToString();
-                comment.UserID = resultJson[i]["UserId"].ToString();
-                commentList.Add(comment);
+                JsonData resultJson = JsonMapper.ToObject(request.text);
+                for (int i = 0; i < resultJson.Count; i++)
+                {
+                    CommentItem comment = new CommentItem();
+                    comment.Comment = resultJson[i]["Text"].ToString();
+                    comment.Ratings = resultJson[i]["Ratings"].ToString();
+                    comment.UserID = resultJson[i]["UserId"].ToString();
+                    commentList.Add(comment);
+                }
             }
+            else
+            {
+                Debug.Log(request.error);
+            }
+            foreach (var thing in commentList)
+            {
+                Debug.Log(thing.Comment + " " + thing.Ratings + " " + thing.UserID);
+            }
+            PopulateList();
         }
-        else
+    }
+
+    public void PopulateList()
+    {
+        foreach (var commentSpace in commentsSpace)
         {
-            Debug.Log(request.error);
+            Destroy(commentSpace);
         }
-        foreach(var thing in commentList)
+        commentsSpace.Clear();
+
+        foreach (var comment in commentList)
         {
-            Debug.Log(thing.Comment + " " + thing.Ratings + " " + thing.UserID);
+            GameObject newComment = Instantiate(CommentTemplate) as GameObject;
+            CommentStorage commentSpace = newComment.GetComponent<CommentStorage>();
+            commentSpace.commentTx.text = comment.Comment;
+            commentSpace.Rating.text = comment.Ratings;
+            commentSpace.whoMadeTheComment.text = comment.UserID;
+            commentSpace.transform.SetParent(contentPanel);
+            commentsSpace.Add(newComment);
         }
     }
 }

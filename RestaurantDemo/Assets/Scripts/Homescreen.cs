@@ -10,8 +10,8 @@ public class Homescreen : MonoBehaviour
 
     public Texture2D fadeoutTexture;
     public float fadeSpeed = 1.4f;
-    private int drawDepth = -1000;
-    private float alpha = 0f;
+    //private int drawDepth = -1000;
+    //private float alpha = 0f;
     private int fadeDir = 1;
     private bool fadestarted = false;
     
