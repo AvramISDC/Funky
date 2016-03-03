@@ -24,30 +24,22 @@ public class CreateScrolList : MonoBehaviour
 
     void Start()
     {
+        var b = GameObject.Find("SearchBox").GetComponent<InputField>();
+        b.text = SearchBoxText;
         PopulateList();
     }
 
     public void PopulateList()
     {
-        foreach (var button in buttons)
-        {
-            Destroy(button);
-        }
-        buttons.Clear();
-
-        foreach (var item in itemList)
-        {
-            GameObject newButton = Instantiate(sampleButton) as GameObject;
-            SampleButton button = newButton.GetComponent<SampleButton>();
-            button.nameoftherestaurant.text = item.name;
-            button.averagestars.text = item.averagestars;
-            button.button.onClick = item.thingToDo;
-            newButton.transform.SetParent(contentPanel);
-            buttons.Add(newButton);
-        }
+        FilterRestaurants(SearchBoxText);
     }
-    public void FilterRestaurants(string a)
+
+    private static string SearchBoxText = "";
+
+
+    public void FilterRestaurants(string SearchText)
     {
+        SearchBoxText = SearchText;
         foreach (var button in buttons)
         {
             Destroy(button);
@@ -56,7 +48,7 @@ public class CreateScrolList : MonoBehaviour
 
         foreach (var item in itemList)
         {
-            if (item.name.ToLower().Contains(a.ToLower()) == false)
+            if (item.name.ToLower().StartsWith(SearchText.ToLower()) == false)
                 continue;
             GameObject newButton = Instantiate(sampleButton) as GameObject;
             SampleButton button = newButton.GetComponent<SampleButton>();

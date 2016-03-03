@@ -47,11 +47,17 @@ public class Homescreen : MonoBehaviour
 
     IEnumerator Start ()
     {
-        return GetRestaurants();
+        return GetRestaurants(saveratings, saveadress);
     }
+
+    public static string saveadress ="";
+    public static int saveratings = -1;
+
 
     public void GetRestaurantsWithFilter(int Rating = -1, string Adress = "")
     {
+        saveadress = Adress;
+        saveratings = Rating;
         StartCoroutine(GetRestaurants(Rating, Adress));
     }
 
