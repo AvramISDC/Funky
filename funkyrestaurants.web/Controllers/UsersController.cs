@@ -1,6 +1,7 @@
 ﻿using funkyrestaurants.web.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -11,8 +12,12 @@ namespace funkyrestaurants.web.Controllers
     public class UsersController : ApiController
     {
         [HttpPost]
-        public bool PostRegisterUser(RegisterData data)
+        public IHttpActionResult PostRegisterUser(RegisterData data)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var db = new FunkyDb();
             var user = new User();
             user.Username = data.username;
@@ -22,13 +27,19 @@ namespace funkyrestaurants.web.Controllers
             user.Birthday = DateTime.Today;
             db.Users.Add(user);
             db.SaveChanges();
-            return true;
+            return Ok(true);
         }
     }
     public class RegisterData
     {
+        [Required]
         public string username { get; set; }
+
+        [Required]
         public string password { get; set; }
+
+        [EmailAddress]
+        [Required]
         public string emailadress { get; set; }
     }
 }
