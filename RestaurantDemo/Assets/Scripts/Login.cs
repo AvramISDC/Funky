@@ -5,7 +5,7 @@ using System.Collections;
 public class Login : MonoBehaviour {
 
     public GameObject Invalid;
-    private string username;
+    public static string username;
     private string password;
 
     public void GetUsername(string usernameInput)

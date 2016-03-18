@@ -413,7 +413,7 @@ namespace funkyrestaurants.web.Models
         public string Text { get; set; } // Text
         public int UserId { get; set; } // User ID
         public int RestaurantId { get; set; } // Restaurant ID
-        public string Ratings { get; set; } // Ratings
+        public int Ratings { get; set; } // Ratings
     }
 
     // Funkyrestaurants
@@ -454,11 +454,11 @@ namespace funkyrestaurants.web.Models
             ToTable(schema + ".Comments");
             HasKey(x => x.Id);
 
-            Property(x => x.Id).HasColumnName("ID").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(x => x.Id).HasColumnName("ID").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Text).HasColumnName("Text").IsRequired().HasColumnType("nvarchar").HasMaxLength(300);
             Property(x => x.UserId).HasColumnName("User ID").IsRequired().HasColumnType("int");
             Property(x => x.RestaurantId).HasColumnName("Restaurant ID").IsRequired().HasColumnType("int");
-            Property(x => x.Ratings).HasColumnName("Ratings").IsRequired().HasColumnType("nvarchar").HasMaxLength(1000);
+            Property(x => x.Ratings).HasColumnName("Ratings").IsRequired().HasColumnType("int");
         }
     }
 

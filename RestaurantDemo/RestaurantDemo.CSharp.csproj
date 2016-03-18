@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\SampleButton.cs" />
     <Compile Include="Assets\Scripts\SampleButtonPageOpener.cs" />
     <Compile Include="Assets\Scripts\SearchButton.cs" />
+    <Compile Include="Assets\Scripts\SubmitComment.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

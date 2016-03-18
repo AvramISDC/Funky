@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using LitJson;
+using System;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -10,10 +11,11 @@ public class CommentItem
 {
     public string UserID;
     public string Comment;
-    public string Ratings;
+    public int Ratings;
 }
 
-public class Comments : MonoBehaviour {
+public class Comments : MonoBehaviour
+{
 
     public int RestaurantID;
 
@@ -39,7 +41,7 @@ public class Comments : MonoBehaviour {
                 {
                     CommentItem comment = new CommentItem();
                     comment.Comment = resultJson[i]["Text"].ToString();
-                    comment.Ratings = resultJson[i]["Ratings"].ToString();
+                    comment.Ratings = Convert.ToInt32(resultJson[i]["Ratings"].ToString());
                     comment.UserID = resultJson[i]["UserId"].ToString();
                     commentList.Add(comment);
                 }
@@ -47,10 +49,6 @@ public class Comments : MonoBehaviour {
             else
             {
                 Debug.Log(request.error);
-            }
-            foreach (var thing in commentList)
-            {
-                Debug.Log(thing.Comment + " " + thing.Ratings + " " + thing.UserID);
             }
             PopulateList();
         }
@@ -69,7 +67,7 @@ public class Comments : MonoBehaviour {
             GameObject newComment = Instantiate(CommentTemplate) as GameObject;
             CommentStorage commentSpace = newComment.GetComponent<CommentStorage>();
             commentSpace.commentTx.text = comment.Comment;
-            commentSpace.Rating.text = comment.Ratings;
+            commentSpace.Rating.text = comment.Ratings.ToString();
             commentSpace.whoMadeTheComment.text = comment.UserID;
             commentSpace.transform.SetParent(contentPanel);
             commentsSpace.Add(newComment);

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e9806d1da2ef1da44bb7d23b77675aad
+timeCreated: 1457105217
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Slider: {instanceID: 0}
+  - LoginButton: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
