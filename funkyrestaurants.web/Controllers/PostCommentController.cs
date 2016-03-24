@@ -18,7 +18,7 @@ namespace funkyrestaurants.web.Controllers
             comment.Text = data.CommentText;
             comment.Ratings = data.Ratings;
             comment.UserId = data.UserId;
-            comment.RestaurantId = 1;
+            comment.RestaurantId = data.RestaurantID;
             db.Comments.Add(comment);
             db.SaveChanges();
             return true;
@@ -29,5 +29,6 @@ namespace funkyrestaurants.web.Controllers
         public string CommentText { get; set; }
         public int Ratings { get; set; }
         public int UserId { get; set; }
+        public int RestaurantID { get; set; }
     }
 }

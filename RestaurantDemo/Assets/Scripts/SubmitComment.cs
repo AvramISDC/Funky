@@ -11,6 +11,7 @@ public class SubmitComment : MonoBehaviour {
     public string CommentText;
     public int UserId;
     public GameObject LoginButton;
+    public Text ratingtext;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class SubmitComment : MonoBehaviour {
 
     public void ReceiveRating () {
         Rating = Convert.ToInt32(Slider.value);
+        ratingtext.text = Rating.ToString();
 	}
 
     public void ReceiveComment(string ReceivedText)
@@ -53,6 +55,7 @@ public class SubmitComment : MonoBehaviour {
         p.AddField("CommentText", CommentText);
         p.AddField("Ratings", Rating);
         p.AddField("UserId", UserId);
+        p.AddField("RestaurantID", SceneParameters.SelectedRestaurantId);
 
 
         p.headers["Content-Type"] = "application/x-www-form-urlencoded"; ;

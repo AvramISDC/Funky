@@ -1,7 +1,7 @@
 using System.Web.Http;
-using WebActivatorEx;
 using funkyrestaurants.web;
 using Swashbuckle.Application;
+using System.Web;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
