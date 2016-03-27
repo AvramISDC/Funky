@@ -11,13 +11,17 @@ namespace funkyrestaurants.web.Controllers
     [RoutePrefix("Api/Restaurants")]
     public class UserGetController : ApiController
     {
-        public IEnumerable<User> Get(string Username)
+        public IEnumerable<User> Get(string Username, int ID)
         {
             var Db = new FunkyDb();
             List<User> list = new List<User>();
             foreach (var user in Db.Users)
             {
                 if (user.Username == Username)
+                {
+                    list.Add(user);
+                }
+                else if(user.Id == ID)
                 {
                     list.Add(user);
                 }

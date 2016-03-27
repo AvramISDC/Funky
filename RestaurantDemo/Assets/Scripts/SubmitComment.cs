@@ -6,15 +6,18 @@ using LitJson;
 
 public class SubmitComment : MonoBehaviour {
 
+    public string Username;
     public Slider Slider;
     public int Rating;
     public string CommentText;
-    public int UserId;
+    public static int UserId;
     public GameObject LoginButton;
+    public GameObject GameController;
+    public string InsideUsername;
 
     void Start()
     {
-        StartCoroutine(ReceiveUser());
+        StartCoroutine(ReceiveUser(0,Login.username));
     }
 
     public void ReceiveRating () {
@@ -27,9 +30,9 @@ public class SubmitComment : MonoBehaviour {
         Debug.Log(CommentText);
     }
 
-    public IEnumerator ReceiveUser()
+    public IEnumerator ReceiveUser(int TemporaryUserId, string TemporaryUsername)
     {
-        WWW www = new WWW("http://localhost:53313/api/UserGet?Username=" + Login.username);
+        WWW www = new WWW("http://localhost:53313/api/UserGet/" + TemporaryUserId + "?Username=" + TemporaryUsername);
         yield return www;
         if (!string.IsNullOrEmpty(www.error))
         {
@@ -38,9 +41,25 @@ public class SubmitComment : MonoBehaviour {
         else
         {
             JsonData resultJson = JsonMapper.ToObject(www.text);
-            UserId = Convert.ToInt32(resultJson[0]["Id"].ToString());
+            if (TemporaryUserId == 0)
+            {
+                UserId = Convert.ToInt32(resultJson[0]["Id"].ToString());
+            }
+            else
+            {
+                InsideUsername = resultJson[0]["Username"].ToString();
+                Debug.Log(InsideUsername);
+                //GameController.GetComponent<Comments>().SendMessage("RetriveUsername", InsideUsername);
+            }
         }
     }
+
+    //public string ReturnUsername(int TemporaryUserId, string TemporaryUsername)
+    //{
+    //    StartCoroutine(ReceiveUser(TemporaryUserId, TemporaryUsername));
+    //    Debug.Log(InsideUsername);
+    //    return InsideUsername;
+    //}
 
     public void OnClick()
     {

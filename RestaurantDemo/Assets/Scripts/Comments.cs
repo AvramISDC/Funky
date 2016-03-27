@@ -16,8 +16,11 @@ public class CommentItem
 
 public class Comments : MonoBehaviour
 {
-
+    public GameObject SubmitButton;
+    public int TemporaryUserId;
+    public string Username;
     public int RestaurantID;
+    public GameObject GameController;
 
     public List<CommentItem> commentList;
 
@@ -42,7 +45,8 @@ public class Comments : MonoBehaviour
                     CommentItem comment = new CommentItem();
                     comment.Comment = resultJson[i]["Text"].ToString();
                     comment.Ratings = Convert.ToInt32(resultJson[i]["Ratings"].ToString());
-                    comment.UserID = resultJson[i]["UserId"].ToString();
+                    comment.UserID = GameController.GetComponent<ReceiveUser>().ReturnUsername(resultJson[i]["UserId"].ToString());
+                    yield return comment.UserID;
                     commentList.Add(comment);
                 }
             }

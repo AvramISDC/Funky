@@ -399,11 +399,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9806d1da2ef1da44bb7d23b77675aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Username: 
   Slider: {fileID: 14537394}
   Rating: 0
   CommentText: 
-  UserId: 0
   LoginButton: {fileID: 195816, guid: 3a6d851612cabd742b09c34a5fe051a6, type: 2}
+  GameController: {fileID: 775206011}
+  InsideUsername: 
 --- !u!1 &130957196
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +837,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 222
+      value: -105
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.x
@@ -944,6 +946,7 @@ GameObject:
   - 4: {fileID: 775206013}
   - 114: {fileID: 775206012}
   - 114: {fileID: 775206014}
+  - 114: {fileID: 775206015}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -990,10 +993,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a951461d780bd40a02983a106b463c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SubmitButton: {fileID: 26522443}
+  TemporaryUserId: 0
+  Username: 
   RestaurantID: 0
+  GameController: {fileID: 775206011}
   commentList: []
   CommentTemplate: {fileID: 146342, guid: 6ded22e04d8915e42a11d307d174872d, type: 2}
   contentPanel: {fileID: 1427124252}
+--- !u!114 &775206015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775206011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f82232f8c0c4bb4ca17c57d5569d638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Username: 
+  GameController: {fileID: 775206011}
 --- !u!1 &947748068
 GameObject:
   m_ObjectHideFlags: 0
