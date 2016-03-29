@@ -403,19 +403,11 @@ MonoBehaviour:
   Slider: {fileID: 14537394}
   Rating: 0
   CommentText: 
-<<<<<<< HEAD
-<<<<<<< HEAD
   LoginButton: {fileID: 195816, guid: 3a6d851612cabd742b09c34a5fe051a6, type: 2}
   GameController: {fileID: 775206011}
   InsideUsername: 
-=======
   UserId: 0
   ratingtext: {fileID: 393281975}
->>>>>>> master
-=======
-  UserId: 0
-  ratingtext: {fileID: 393281975}
->>>>>>> master
 --- !u!1 &130957196
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,15 +912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.y
-<<<<<<< HEAD
-<<<<<<< HEAD
       value: -105
-=======
-      value: 0
->>>>>>> master
-=======
-      value: 0
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.x
