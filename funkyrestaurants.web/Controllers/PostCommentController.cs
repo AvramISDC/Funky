@@ -27,7 +27,7 @@ namespace funkyrestaurants.web.Controllers
     public class RegisterComment
     {
         public string CommentText { get; set; }
-        public int Ratings { get; set; }
+        public int? Ratings { get; set; }
         public int UserId { get; set; }
         public int RestaurantID { get; set; }
     }

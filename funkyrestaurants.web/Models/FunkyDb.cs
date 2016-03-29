@@ -49,6 +49,8 @@ namespace funkyrestaurants.web.Models
     {
         DbSet<Comment> Comments { get; set; } // Comments
         DbSet<Funkyrestaurant> Funkyrestaurants { get; set; } // Funkyrestaurants
+        DbSet<RefactorLog> RefactorLogs { get; set; } // __RefactorLog
+        DbSet<Reservation> Reservations { get; set; } // Reservations
         DbSet<User> Users { get; set; } // Users
 
         int SaveChanges();
@@ -64,6 +66,8 @@ namespace funkyrestaurants.web.Models
     {
         public DbSet<Comment> Comments { get; set; } // Comments
         public DbSet<Funkyrestaurant> Funkyrestaurants { get; set; } // Funkyrestaurants
+        public DbSet<RefactorLog> RefactorLogs { get; set; } // __RefactorLog
+        public DbSet<Reservation> Reservations { get; set; } // Reservations
         public DbSet<User> Users { get; set; } // Users
         
         static FunkyDb()
@@ -104,6 +108,8 @@ namespace funkyrestaurants.web.Models
 
             modelBuilder.Configurations.Add(new CommentConfiguration());
             modelBuilder.Configurations.Add(new FunkyrestaurantConfiguration());
+            modelBuilder.Configurations.Add(new RefactorLogConfiguration());
+            modelBuilder.Configurations.Add(new ReservationConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
         }
 
@@ -111,6 +117,8 @@ namespace funkyrestaurants.web.Models
         {
             modelBuilder.Configurations.Add(new CommentConfiguration(schema));
             modelBuilder.Configurations.Add(new FunkyrestaurantConfiguration(schema));
+            modelBuilder.Configurations.Add(new RefactorLogConfiguration(schema));
+            modelBuilder.Configurations.Add(new ReservationConfiguration(schema));
             modelBuilder.Configurations.Add(new UserConfiguration(schema));
             return modelBuilder;
         }
@@ -125,12 +133,16 @@ namespace funkyrestaurants.web.Models
     {
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Funkyrestaurant> Funkyrestaurants { get; set; }
+        public DbSet<RefactorLog> RefactorLogs { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
         public DbSet<User> Users { get; set; }
 
         public FakeFunkyDb()
         {
             Comments = new FakeDbSet<Comment>("Id");
             Funkyrestaurants = new FakeDbSet<Funkyrestaurant>("Id", "Name", "Description", "Adress");
+            RefactorLogs = new FakeDbSet<RefactorLog>("OperationKey");
+            Reservations = new FakeDbSet<Reservation>("Id");
             Users = new FakeDbSet<User>("Id");
         }
         
@@ -413,7 +425,7 @@ namespace funkyrestaurants.web.Models
         public string Text { get; set; } // Text
         public int UserId { get; set; } // User ID
         public int RestaurantId { get; set; } // Restaurant ID
-        public int Ratings { get; set; } // Ratings
+        public int? Ratings { get; set; } // Ratings
     }
 
     // Funkyrestaurants
@@ -424,6 +436,21 @@ namespace funkyrestaurants.web.Models
         public string Description { get; set; } // Description
         public string Adress { get; set; } // Adress
         public double? AverageStars { get; set; } // AverageStars
+    }
+
+    // __RefactorLog
+    public class RefactorLog
+    {
+        public Guid OperationKey { get; set; } // OperationKey (Primary key)
+    }
+
+    // Reservations
+    public class Reservation
+    {
+        public int Id { get; set; } // ID (Primary key)
+        public string RestaurantId { get; set; } // RestaurantID
+        public string UserId { get; set; } // UserID
+        public DateTime DateAndTime { get; set; } // DateAndTime
     }
 
     // Users
@@ -455,10 +482,10 @@ namespace funkyrestaurants.web.Models
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName("ID").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.Text).HasColumnName("Text").IsRequired().HasColumnType("nvarchar").HasMaxLength(300);
+            Property(x => x.Text).HasColumnName("Text").IsOptional().HasColumnType("nvarchar").HasMaxLength(300);
             Property(x => x.UserId).HasColumnName("User ID").IsRequired().HasColumnType("int");
             Property(x => x.RestaurantId).HasColumnName("Restaurant ID").IsRequired().HasColumnType("int");
-            Property(x => x.Ratings).HasColumnName("Ratings").IsRequired().HasColumnType("int");
+            Property(x => x.Ratings).HasColumnName("Ratings").IsOptional().HasColumnType("int");
         }
     }
 
@@ -483,6 +510,43 @@ namespace funkyrestaurants.web.Models
         }
     }
 
+    // __RefactorLog
+    public class RefactorLogConfiguration : EntityTypeConfiguration<RefactorLog>
+    {
+        public RefactorLogConfiguration()
+            : this("dbo")
+        {
+        }
+ 
+        public RefactorLogConfiguration(string schema)
+        {
+            ToTable(schema + ".__RefactorLog");
+            HasKey(x => x.OperationKey);
+
+            Property(x => x.OperationKey).HasColumnName("OperationKey").IsRequired().HasColumnType("uniqueidentifier").HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+        }
+    }
+
+    // Reservations
+    public class ReservationConfiguration : EntityTypeConfiguration<Reservation>
+    {
+        public ReservationConfiguration()
+            : this("dbo")
+        {
+        }
+ 
+        public ReservationConfiguration(string schema)
+        {
+            ToTable(schema + ".Reservations");
+            HasKey(x => x.Id);
+
+            Property(x => x.Id).HasColumnName("ID").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(x => x.RestaurantId).HasColumnName("RestaurantID").IsRequired().HasColumnType("nvarchar").HasMaxLength(50);
+            Property(x => x.UserId).HasColumnName("UserID").IsRequired().HasColumnType("nvarchar").HasMaxLength(100);
+            Property(x => x.DateAndTime).HasColumnName("DateAndTime").IsRequired().HasColumnType("datetime");
+        }
+    }
+
     // Users
     public class UserConfiguration : EntityTypeConfiguration<User>
     {
@@ -497,7 +561,7 @@ namespace funkyrestaurants.web.Models
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName("ID").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.Name).HasColumnName("Name").IsRequired().HasColumnType("nvarchar").HasMaxLength(100);
+            Property(x => x.Name).HasColumnName("Name").IsOptional().HasColumnType("nvarchar").HasMaxLength(100);
             Property(x => x.Birthday).HasColumnName("Birthday").IsRequired().HasColumnType("datetime");
             Property(x => x.EmailAdress).HasColumnName("Email Adress").IsRequired().HasColumnType("nvarchar");
             Property(x => x.Username).HasColumnName("Username").IsRequired().HasColumnType("nvarchar");
