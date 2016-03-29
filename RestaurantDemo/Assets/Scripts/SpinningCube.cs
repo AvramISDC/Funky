@@ -14,10 +14,14 @@ public class SpinningCube : MonoBehaviour {
         
 	}
 	
-	
 	void Update ()
     {
+        if (Cube.transform.position.x < 223 || Cube.transform.position.x > 733)
+            hSpeed = -hSpeed;
+        if (Cube.transform.position.y < 182 || Cube.transform.position.y > 644)
+            vSpeed = -vSpeed;
+
         Cube.transform.Rotate(0.2f, 0.3f, 0.6f);
-        Cube.transform.Translate(vSpeed, hSpeed, 0, Space.World);
-	}
+        Cube.transform.Translate(hSpeed, vSpeed, 0, Space.World);
+    }
 }
