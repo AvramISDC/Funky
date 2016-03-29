@@ -6,15 +6,12 @@ using System;
 using System.Collections.Generic;
 public class ReceiveUser : MonoBehaviour {
 
-    public string Username;
-
-    public string ReturnUsername(string TemporaryUserId)
+    public void ReturnUsername(string id,CommentItem comentItem)
     {
-        StartCoroutine(ReceiveUsername(TemporaryUserId));
-        return Username;
+        StartCoroutine(ReceiveUsername(id, comentItem));
     }
 
-    public IEnumerator ReceiveUsername(string UserID)
+    public IEnumerator ReceiveUsername(string UserID, CommentItem comentItem)
     {
         WWW www = new WWW("http://localhost:53313/api/UserGet/" + UserID + "?Username=default");
         yield return www;
@@ -25,8 +22,8 @@ public class ReceiveUser : MonoBehaviour {
         else
         {
             JsonData resultJson = JsonMapper.ToObject(www.text);
-            Username = resultJson[0]["Username"].ToString();
-            yield return Username;
+            comentItem.UserID = resultJson[0]["Username"].ToString();
+            yield break;
         }
     }
 }

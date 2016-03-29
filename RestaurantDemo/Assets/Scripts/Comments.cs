@@ -45,7 +45,7 @@ public class Comments : MonoBehaviour
                     CommentItem comment = new CommentItem();
                     comment.Comment = resultJson[i]["Text"].ToString();
                     comment.Ratings = Convert.ToInt32(resultJson[i]["Ratings"].ToString());
-                    comment.UserID = GameController.GetComponent<ReceiveUser>().ReturnUsername(resultJson[i]["UserId"].ToString());
+                    GameController.GetComponent<ReceiveUser>().ReturnUsername(resultJson[i]["UserId"].ToString(), comment);
                     yield return comment.UserID;
                     commentList.Add(comment);
                 }
