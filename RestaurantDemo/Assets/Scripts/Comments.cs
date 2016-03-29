@@ -18,7 +18,6 @@ public class Comments : MonoBehaviour
 {
     public GameObject SubmitButton;
     public int TemporaryUserId;
-    public string Username;
     public int RestaurantID;
     public GameObject GameController;
 

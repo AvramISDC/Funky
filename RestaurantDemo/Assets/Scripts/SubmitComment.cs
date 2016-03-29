@@ -6,14 +6,13 @@ using LitJson;
 
 public class SubmitComment : MonoBehaviour {
 
-    public string Username;
     public Slider Slider;
     public int Rating;
     public string CommentText;
-    public static int UserId;
+    public InputField commentBox;
+    public int UserId;
     public GameObject LoginButton;
     public GameObject GameController;
-    public string InsideUsername;
     public Text ratingtext;
 
     void Start()
@@ -29,7 +28,6 @@ public class SubmitComment : MonoBehaviour {
     public void ReceiveComment(string ReceivedText)
     {
         CommentText = ReceivedText;
-        Debug.Log(CommentText);
     }
 
     public IEnumerator ReceiveUser(int TemporaryUserId, string TemporaryUsername)
@@ -43,25 +41,9 @@ public class SubmitComment : MonoBehaviour {
         else
         {
             JsonData resultJson = JsonMapper.ToObject(www.text);
-            if (TemporaryUserId == 0)
-            {
-                UserId = Convert.ToInt32(resultJson[0]["Id"].ToString());
-            }
-            else
-            {
-                InsideUsername = resultJson[0]["Username"].ToString();
-                Debug.Log(InsideUsername);
-                //GameController.GetComponent<Comments>().SendMessage("RetriveUsername", InsideUsername);
-            }
+            UserId = Convert.ToInt32(resultJson[0]["Id"].ToString());
         }
     }
-
-    //public string ReturnUsername(int TemporaryUserId, string TemporaryUsername)
-    //{
-    //    StartCoroutine(ReceiveUser(TemporaryUserId, TemporaryUsername));
-    //    Debug.Log(InsideUsername);
-    //    return InsideUsername;
-    //}
 
     public void OnClick()
     {
@@ -87,7 +69,8 @@ public class SubmitComment : MonoBehaviour {
         }
         else
         {
-            Debug.Log("It worked");
+            Slider.gameObject.SetActive(false);
+            commentBox.text = "";
         }
 
     }
