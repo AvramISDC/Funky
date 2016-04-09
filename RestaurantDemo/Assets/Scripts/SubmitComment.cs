@@ -10,7 +10,7 @@ public class SubmitComment : MonoBehaviour {
     public int Rating;
     public string CommentText;
     public InputField commentBox;
-    public int UserId;
+    public static int UserId;
     public GameObject LoginButton;
     public GameObject GameController;
     public Text ratingtext;

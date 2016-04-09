@@ -17,7 +17,6 @@ public class CommentItem
 public class Comments : MonoBehaviour
 {
     public GameObject SubmitButton;
-    public int TemporaryUserId;
     public int RestaurantID;
     public GameObject GameController;
 

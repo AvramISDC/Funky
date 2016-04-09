@@ -65,7 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ReceiveUser.cs" />
+    <Compile Include="Assets\Scripts\CollectInfo.cs" />
     <Compile Include="Assets\Scripts\CommentStorage.cs" />
     <Compile Include="Assets\Scripts\Comments.cs" />
     <Compile Include="Assets\Scripts\CreateScrolList.cs" />
@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\CriteriaPanel.cs" />
     <Compile Include="Assets\Scripts\Homescreen.cs" />
     <Compile Include="Assets\Scripts\Login.cs" />
+    <Compile Include="Assets\Scripts\ReceiveUser.cs" />
     <Compile Include="Assets\Scripts\Register.cs" />
     <Compile Include="Assets\Scripts\RegisterUsers.cs" />
     <Compile Include="Assets\Scripts\Restaurant.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\Scripts\SearchButton.cs" />
     <Compile Include="Assets\Scripts\SpinningCube.cs" />
     <Compile Include="Assets\Scripts\SubmitComment.cs" />
+    <Compile Include="Assets\Scripts\VisitButton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

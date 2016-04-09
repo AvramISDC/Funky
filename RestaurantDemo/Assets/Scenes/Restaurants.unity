@@ -403,7 +403,6 @@ MonoBehaviour:
   Rating: 0
   CommentText: 
   commentBox: {fileID: 379910765}
-  UserId: 0
   LoginButton: {fileID: 195816, guid: 3a6d851612cabd742b09c34a5fe051a6, type: 2}
   GameController: {fileID: 775206011}
   ratingtext: {fileID: 393281975}
@@ -911,7 +910,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 213
+      value: -111
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.x
@@ -1068,7 +1067,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SubmitButton: {fileID: 26522443}
-  TemporaryUserId: 0
   RestaurantID: 0
   GameController: {fileID: 775206011}
   commentList: []
@@ -1920,6 +1918,7 @@ GameObject:
   - 222: {fileID: 1614093346}
   - 114: {fileID: 1614093345}
   - 114: {fileID: 1614093344}
+  - 114: {fileID: 1614093347}
   m_Layer: 5
   m_Name: VisitRestaurant
   m_TagString: Untagged
@@ -1983,7 +1982,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1614093345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1614093347}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1614093345
@@ -2019,6 +2029,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1614093342}
+--- !u!114 &1614093347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614093342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfffb513eea31542a024604c71ac39e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681637562
 GameObject:
   m_ObjectHideFlags: 0
