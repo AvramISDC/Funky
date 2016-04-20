@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Restaurants.unity
   - enabled: 1
     path: Assets/Scenes/3DView.unity
+  - enabled: 1
+    path: Assets/Scenes/Reservation.unity
