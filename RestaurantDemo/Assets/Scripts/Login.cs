@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour {
 
@@ -51,6 +52,10 @@ public class Login : MonoBehaviour {
     }
     public void OnClick()
     {
+        StartCoroutine(LoginUser());
+    }
+    public void LoadScene()
+    {
         fadestarted = true;
     }
 
@@ -58,7 +63,6 @@ public class Login : MonoBehaviour {
     {
         username = !string.IsNullOrEmpty(username) ? username : "";
         password = !string.IsNullOrEmpty(password) ? password : "";
-        Debug.Log(username + " " + password);
         WWWForm q = new WWWForm();
         q.AddField("username", username);
         q.AddField("password", password);

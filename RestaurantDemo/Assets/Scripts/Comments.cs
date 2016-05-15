@@ -17,7 +17,7 @@ public class CommentItem
 public class Comments : MonoBehaviour
 {
     public GameObject SubmitButton;
-    public int RestaurantID;
+    public int RestaurantID = 1;
     public GameObject GameController;
 
     public List<CommentItem> commentList;
@@ -30,9 +30,11 @@ public class Comments : MonoBehaviour
     public IEnumerator Start()
     {
         RestaurantID = SceneParameters.SelectedRestaurantId;
-        if (RestaurantID != 0)
-        {
-            string url = "http://localhost:53313/api/Comments?RestaurantID=" + SceneParameters.SelectedRestaurantId;
+        if (RestaurantID == 0)
+            RestaurantID = 1;
+        //if (RestaurantID != 0)
+        //{
+            string url = "http://localhost:53313/api/Comments?RestaurantID=" + RestaurantID;
             WWW request = new WWW(url);
             yield return request;
             if (request.error == null)
@@ -53,7 +55,7 @@ public class Comments : MonoBehaviour
                 Debug.Log(request.error);
             }
             PopulateList();
-        }
+        //}
     }
 
     public void PopulateList()

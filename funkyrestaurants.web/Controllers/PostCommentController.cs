@@ -20,6 +20,30 @@ namespace funkyrestaurants.web.Controllers
             comment.UserId = data.UserId;
             comment.RestaurantId = data.RestaurantID;
             db.Comments.Add(comment);
+            //multiple users?
+            //IEnumerable<int?> ratings = db.Comments.Where(c => c.RestaurantId == data.RestaurantID).Select(c => c.Ratings);
+            db.SaveChanges();
+            int? avg = 0;
+            int count = 0;
+            foreach (Comment R in db.Comments)
+            {
+                if (R.RestaurantId == comment.RestaurantId)
+                {
+                    avg += R.Ratings;
+                    count++;
+                }
+            }
+            Funkyrestaurant current = null;
+            avg = avg / count;
+            foreach (Funkyrestaurant restaurant in db.Funkyrestaurants)
+            {
+                if(restaurant.Id == comment.RestaurantId)
+                {
+                    current = restaurant;
+                    break;
+                }
+            }
+            current.AverageStars = avg;
             db.SaveChanges();
             return true;
         }
