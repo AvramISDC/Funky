@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantDemo.CSharp.Plugins", "RestaurantDemo.CSharp.Plugins.csproj", "{3496DF3E-402B-C03B-BAAC-F35AB4B8C5FE}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantDemo.CSharp", "RestaurantDemo.CSharp.csproj", "{85C69716-15C2-E963-9F27-93E180CFC189}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3496DF3E-402B-C03B-BAAC-F35AB4B8C5FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3496DF3E-402B-C03B-BAAC-F35AB4B8C5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3496DF3E-402B-C03B-BAAC-F35AB4B8C5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3496DF3E-402B-C03B-BAAC-F35AB4B8C5FE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{85C69716-15C2-E963-9F27-93E180CFC189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{85C69716-15C2-E963-9F27-93E180CFC189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85C69716-15C2-E963-9F27-93E180CFC189}.Release|Any CPU.ActiveCfg = Release|Any CPU
