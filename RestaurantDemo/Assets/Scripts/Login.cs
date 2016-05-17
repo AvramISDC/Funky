@@ -51,7 +51,7 @@ public class Login : MonoBehaviour {
     }
     public void OnClick()
     {
-        fadestarted = true;
+        StartCoroutine(LoginUser());
     }
 
     public IEnumerator LoginUser()
@@ -73,14 +73,15 @@ public class Login : MonoBehaviour {
         }
         else
         {
-            if (www.text == "true")
+            if (www.text != "-1")
             {
                 fadestarted = true;
+                SceneParameters.SelectedUserId = int.Parse(www.text);
             }
             else
             {
                 Invalid.SetActive(true);
             }
-        }
+        } 
     }
 }

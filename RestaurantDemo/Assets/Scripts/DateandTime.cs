@@ -7,6 +7,7 @@ public class DateandTime : MonoBehaviour {
 
     public Dropdown date;
     public Dropdown time;
+   // public static ArrayList<DateTime>dates  
 
 	void Start () {
         for (int i = 0; i < 14; i++)

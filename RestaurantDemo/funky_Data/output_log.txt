@@ -1,10 +1,10 @@
-Initialize engine version: 5.3.2f1 (e87ab445ead0)
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
     Renderer: AMD Radeon(TM) R5 Graphics (ID=0x9851)
     Vendor:   ATI
-    VRAM:     2537 MB
+    VRAM:     2536 MB
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -16,7 +16,7 @@ Platform assembly: C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Mana
 Loading C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.391 seconds
+- Completed reload, in  0.383 seconds
 Platform assembly: C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\rocke\Documents\Funky\RestaurantDemo\funky_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -24,72 +24,44 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 338.910767 ms
+UnloadTime: 37.578457 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 43.483700 ms
+UnloadTime: 18.627132 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 362.
-Total: 13.371354 ms (FindLiveObjects: 0.257506 ms CreateObjectMapping: 0.029751 ms MarkObjects: 13.068193 ms  DeleteObjects: 0.013849 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 384.
+Total: 0.760720 ms (FindLiveObjects: 0.081560 ms CreateObjectMapping: 0.030264 ms MarkObjects: 0.636583 ms  DeleteObjects: 0.010259 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.328603 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.553790 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 362.
-Total: 0.769954 ms (FindLiveObjects: 0.067197 ms CreateObjectMapping: 0.026161 ms MarkObjects: 0.666336 ms  DeleteObjects: 0.008720 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 384.
+Total: 0.815094 ms (FindLiveObjects: 0.075918 ms CreateObjectMapping: 0.028725 ms MarkObjects: 0.699165 ms  DeleteObjects: 0.009233 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.697900 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.052114 ms
 
-Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 238.
-Total: 1.113638 ms (FindLiveObjects: 0.139012 ms CreateObjectMapping: 0.026673 ms MarkObjects: 0.873572 ms  DeleteObjects: 0.070788 ms)
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 357.
+Total: 1.544523 ms (FindLiveObjects: 0.123110 ms CreateObjectMapping: 0.043088 ms MarkObjects: 1.235208 ms  DeleteObjects: 0.139525 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.767902 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.957730 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 238.
-Total: 0.699165 ms (FindLiveObjects: 0.055399 ms CreateObjectMapping: 0.016414 ms MarkObjects: 0.618117 ms  DeleteObjects: 0.007694 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 357.
+Total: 1.043874 ms (FindLiveObjects: 0.083099 ms CreateObjectMapping: 0.032829 ms MarkObjects: 0.915634 ms  DeleteObjects: 0.010259 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.970522 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 362.
-Total: 1.084399 ms (FindLiveObjects: 0.084638 ms CreateObjectMapping: 0.026161 ms MarkObjects: 0.953594 ms  DeleteObjects: 0.017440 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.159804 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 362.
-Total: 0.943335 ms (FindLiveObjects: 0.076944 ms CreateObjectMapping: 0.026673 ms MarkObjects: 0.828431 ms  DeleteObjects: 0.009233 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.533240 ms
-
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 262.
-Total: 1.035668 ms (FindLiveObjects: 0.117468 ms CreateObjectMapping: 0.029751 ms MarkObjects: 0.847411 ms  DeleteObjects: 0.037446 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.087477 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 270.
-Total: 1.720471 ms (FindLiveObjects: 0.201080 ms CreateObjectMapping: 0.035907 ms MarkObjects: 1.429622 ms  DeleteObjects: 0.044627 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.140312 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 270.
-Total: 0.789959 ms (FindLiveObjects: 0.059503 ms CreateObjectMapping: 0.017953 ms MarkObjects: 0.699678 ms  DeleteObjects: 0.010772 ms)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Homescreen.ProcessRestaurants (System.String Json) [0x00000] in <filename unknown>:0 
-  at Homescreen+<GetRestaurants>c__Iterator0.MoveNext () [0x00000] in <filename unknown>:0 
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[LitJson.JsonData].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at LitJson.JsonData.get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at SubmitComment+<ReceiveUser>c__Iterator6.MoveNext () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.289070 ms
+UnloadTime: 2.316529 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 259.
-Total: 1.137747 ms (FindLiveObjects: 0.127214 ms CreateObjectMapping: 0.027186 ms MarkObjects: 0.969496 ms  DeleteObjects: 0.010772 ms)
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 201.
+Total: 1.381402 ms (FindLiveObjects: 0.087203 ms CreateObjectMapping: 0.038472 ms MarkObjects: 1.166472 ms  DeleteObjects: 0.086177 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: da4 -> priority: 1 
+  Thread -> id: 14f4 -> priority: 1 

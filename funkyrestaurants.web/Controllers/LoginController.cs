@@ -11,7 +11,7 @@ namespace funkyrestaurants.web.Controllers
     public class LoginController : ApiController
     {
         [HttpPost]
-        public bool PostVerifyUser(CheckData credentials)
+        public int PostVerifyUser(CheckData credentials)
         {
             var db = new FunkyDb();
             foreach (var user in db.Users)
@@ -20,11 +20,11 @@ namespace funkyrestaurants.web.Controllers
                 {
                     if (user.Password == credentials.password)
                     {
-                        return true;
+                        return user.Id;
                     }
                 }
             }
-            return false;
+            return -1;
         }
 
         public class CheckData

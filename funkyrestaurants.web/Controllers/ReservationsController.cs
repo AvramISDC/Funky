@@ -26,10 +26,6 @@ namespace funkyrestaurants.web.Controllers
             }
 
         }
-
-
-
-
     }
 
     public class RegisterReservation

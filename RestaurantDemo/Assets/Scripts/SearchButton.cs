@@ -27,7 +27,6 @@ public class SearchButton : MonoBehaviour {
         InputField.text = InputFieldText;
     }
 
-
     public void OnClick()
     {
         var h = GameObject.Find("BackButton").GetComponent<Homescreen>();

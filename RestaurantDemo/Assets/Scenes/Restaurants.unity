@@ -910,7 +910,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -97
       objectReference: {fileID: 0}
     - target: {fileID: 22432946, guid: 04b2d671394b59145a8d4316eab8cc0e, type: 2}
       propertyPath: m_AnchorMin.x

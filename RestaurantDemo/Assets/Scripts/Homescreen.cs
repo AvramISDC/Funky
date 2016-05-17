@@ -41,7 +41,7 @@ public class Homescreen : MonoBehaviour
 
     public void OnClick()
     {
-        //fadestarted = true;
+        fadestarted = true;
         SceneManager.LoadScene(0);
     }
 

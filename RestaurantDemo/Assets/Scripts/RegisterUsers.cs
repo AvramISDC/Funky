@@ -20,7 +20,6 @@ public class RegisterUsers : MonoBehaviour {
         email = emailInput;
     }
 
-
     public IEnumerator RegisterUser ()
     {
         WWWForm p = new WWWForm();
@@ -37,7 +36,6 @@ public class RegisterUsers : MonoBehaviour {
             Debug.Log(www.error);
         }
     }
-
 
     public void OnClick()
     {
