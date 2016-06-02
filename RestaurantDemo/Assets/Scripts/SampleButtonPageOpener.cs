@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class SampleButtonPageOpener : MonoBehaviour {
 
@@ -45,4 +46,6 @@ public static class SceneParameters {
 
     public static int SelectedRestaurantId = 0;
     public static int SelectedUserId = 0;
+    public static DateTime Selecteddatetime; 
+  
 }

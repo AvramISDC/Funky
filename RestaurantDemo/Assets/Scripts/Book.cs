@@ -11,6 +11,7 @@ public class Book : MonoBehaviour
     public Text Available;
     private static int date = -1;
     private static int time = -1;
+    public Button bookbutton;
 
 
     public void DateChanged(int newdate)
@@ -29,13 +30,6 @@ public class Book : MonoBehaviour
         if (time == -1 || date == -1)
             yield break;
 
-
-
-
-
-
-        // TODO get values from dropdowns using time and date and put them into dateandtime
-
         string url = "http://localhost:53313/api/Reservations";
         string Querry = "";
 
@@ -44,7 +38,7 @@ public class Book : MonoBehaviour
 
 
         DateTime dateandtime = DateTime.Today.AddDays(date).AddHours(time);
-
+        SceneParameters.Selecteddatetime = dateandtime;
 
         Querry = Querry + "&DateandTime=" + dateandtime.ToString("MM/dd/yyyy");
 
@@ -59,10 +53,12 @@ public class Book : MonoBehaviour
             bool result = bool.Parse(book.text);
             if (result == true)
             {
+                bookbutton.enabled = true;
                 Available.text = "Available";
             }
             else
             {
+                bookbutton.enabled = false;
                 Available.text = "Not Available";
             }
         }

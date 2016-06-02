@@ -451,7 +451,7 @@ namespace funkyrestaurants.web.Models
     {
         public int Id { get; set; } // ID (Primary key)
         public int RestaurantId { get; set; } // RestaurantID
-        public string UserId { get; set; } // UserID
+        public int UserId { get; set; } // UserID
         public DateTime DateAndTime { get; set; } // DateAndTime
     }
 
@@ -546,7 +546,7 @@ namespace funkyrestaurants.web.Models
 
             Property(x => x.Id).HasColumnName("ID").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.RestaurantId).HasColumnName("RestaurantID").IsRequired().HasColumnType("int");
-            Property(x => x.UserId).HasColumnName("UserID").IsRequired().HasColumnType("nvarchar").HasMaxLength(100);
+            Property(x => x.UserId).HasColumnName("UserID").IsRequired().HasColumnType("int");
             Property(x => x.DateAndTime).HasColumnName("DateAndTime").IsRequired().HasColumnType("datetime");
         }
     }
