@@ -17,12 +17,12 @@ public class Book : MonoBehaviour
     public void DateChanged(int newdate)
     {
         date = Date.value;
-        StartCoroutine(CheckReservation());
+        //StartCoroutine(CheckReservation());
     }
     public void TimeChanged(int newtime)
     {
         time = Time.value;
-        StartCoroutine(CheckReservation());
+        //StartCoroutine(CheckReservation());
     }
 
     public IEnumerator CheckReservation()
