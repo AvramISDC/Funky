@@ -58,7 +58,6 @@ public class Login : MonoBehaviour {
     {
         username = !string.IsNullOrEmpty(username) ? username : "";
         password = !string.IsNullOrEmpty(password) ? password : "";
-        Debug.Log(username + " " + password);
         WWWForm q = new WWWForm();
         q.AddField("username", username);
         q.AddField("password", password);

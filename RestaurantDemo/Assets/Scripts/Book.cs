@@ -51,7 +51,7 @@ public class Book : MonoBehaviour
         if (book.error == null)
         {
             bool result = bool.Parse(book.text);
-            if (result == true)
+            if (result == false)
             {
                 bookbutton.enabled = true;
                 Available.text = "Available";

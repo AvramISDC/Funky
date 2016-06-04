@@ -15,7 +15,16 @@ namespace funkyrestaurants.web.Controllers
             var Db = new FunkyDb();
             var StartedDate = dateandtime.Date;
             var EndDate = dateandtime.Date.AddDays(1);
-            var count = Db.Reservations.Where(r => r.RestaurantId == RestaurantID && r.DateAndTime < EndDate && r.DateAndTime > StartedDate).Count();
+            //var count = 0;
+            var count = Db.Reservations.Where(r => r.RestaurantId == RestaurantID && r.DateAndTime <= EndDate && r.DateAndTime >= StartedDate).Count();
+            //fix this shit ^
+            //foreach(Reservation c in Db.Reservations)
+            //{
+            //    if(c.DateAndTime >= StartedDate && c.DateAndTime <= EndDate)
+            //    {
+            //        count++;
+            //    }
+            //}
             var Restaurant = Db.Funkyrestaurants.Find(RestaurantID);
             if( Restaurant.Tables > count)
             {
@@ -35,5 +44,4 @@ namespace funkyrestaurants.web.Controllers
         public int RestaurantID { get; set; }
         public DateTime DateAndTime { get; set; }
     }
-
 }
