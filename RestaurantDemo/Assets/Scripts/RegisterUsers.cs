@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
+using UnityEngine.UI;
+
 
 public class RegisterUsers : MonoBehaviour {
 
     private string username;
     private string password;
     private string email;
+    public Text Message;
 
     public void GetUsername(string usernameInput)
     {
@@ -15,9 +21,29 @@ public class RegisterUsers : MonoBehaviour {
     {
         password = passwordInput;
     }
+
+    public const string MatchEmailPattern =
+            @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
+            + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
+              + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+            + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
+
     public void GetEmail(string emailInput)
     {
-        email = emailInput;
+        if (IsEmail(emailInput))
+        {
+            email = emailInput;
+        }
+        else
+        {
+            Message.text = "Invalid email";
+        }
+    }
+
+    public static bool IsEmail(string email)
+    {
+        if (email != null) return Regex.IsMatch(email, MatchEmailPattern);
+        else return false;
     }
 
     public IEnumerator RegisterUser ()
@@ -34,6 +60,11 @@ public class RegisterUsers : MonoBehaviour {
         if (!string.IsNullOrEmpty(www.error))
         {
             Debug.Log(www.error);
+            Message.text = "There is an error with our server";
+        }
+        else
+        {
+            Message.text = "Your account has been created";
         }
     }
 

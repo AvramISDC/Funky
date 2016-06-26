@@ -240,12 +240,12 @@ GameObject:
   - 222: {fileID: 657605517}
   - 114: {fileID: 657605516}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &657605515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ RectTransform:
   m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 78, y: -239.75}
+  m_AnchoredPosition: {x: 80, y: -242.91}
   m_SizeDelta: {x: 287, y: 109.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &657605516
@@ -295,7 +295,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Your account has \nbeen created"
+  m_Text: 
 --- !u!222 &657605517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -881,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe37d7700ce6bc4d9c3e1f39a990c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Message: {fileID: 657605516}
 --- !u!114 &1227094213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,17 +931,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 657605514}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null

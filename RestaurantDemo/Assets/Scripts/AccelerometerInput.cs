@@ -9,7 +9,7 @@ public class AccelerometerInput : MonoBehaviour
         float speed = 2;
         float xInput = Input.acceleration.x;
         float yInput = Input.acceleration.y;
-        float zInput = Input.acceleration.z;
+        //float zInput = Input.acceleration.z;
         if(yInput >= 0.1)
         {
             transform.Translate(0, 0, Time.deltaTime * speed);

@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Login : MonoBehaviour {
 
-    public GameObject Invalid;
+    public Text Invalid;
     public static string username;
     private string password;
 
@@ -79,7 +80,7 @@ public class Login : MonoBehaviour {
             }
             else
             {
-                Invalid.SetActive(true);
+                Invalid.text = "Username and password do not match or exist";
             }
         } 
     }
